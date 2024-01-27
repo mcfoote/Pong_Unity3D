@@ -18,9 +18,9 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         p1Score = 0;
         p2Score = 0;
-
 
         Text1.text = p1Score.ToString();
         Text2.text = p2Score.ToString();
@@ -29,13 +29,12 @@ public class ScoreManager : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
 
-
         if(this.gameObject.name == "Goal2") {
             p2Score += 1;
             Text2.text = p2Score.ToString();
             Debug.Log("Score Goal 2");
         }
-        
+
         if(this.gameObject.name == "Goal1") {
             p1Score += 1;
             Text1.text = p1Score.ToString();

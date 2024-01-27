@@ -14,6 +14,7 @@ public class PaddleController : MonoBehaviour
     void Update()
     {
         float speed = .05f;
+
         if(gameObject.name == "Paddle1") {
             transform.Translate(0, Input.GetAxis("Horizontal") * speed, 0);
         }
@@ -21,6 +22,14 @@ public class PaddleController : MonoBehaviour
         else  {
             transform.Translate(0, Input.GetAxis("Vertical") * speed, 0);
         } 
+
+        if(transform.position.y > 3) {
+            transform.position = new Vector3(transform.position.x, 3, transform.position.z);
+        }
+
+        if(transform.position.y < -3) {
+            transform.position = new Vector3(transform.position.x, -3, transform.position.z);
+        }
             
         
     }

@@ -8,6 +8,8 @@ public class Ball : MonoBehaviour
     float speedX;
     float speedY;
 
+    public AudioSource audioOut;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class Ball : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
+
         speedX = Random.Range(0, 2) == 0 ? -1: 1;
         speedY = Random.Range(0, 2) == 0 ? -1: 1;
         GetComponent<Rigidbody> ().position = new Vector3(0, 0, 0);
@@ -30,4 +33,11 @@ public class Ball : MonoBehaviour
     {
    
     }
+
+
+    void OnCollisionEnter() {
+       audioOut.Play(0); 
+       Debug.Log("Play a sound");
+    }
+
 }
