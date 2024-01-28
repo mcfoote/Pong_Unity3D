@@ -37,7 +37,6 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter() {
        audioOut.Play(0); 
-       Debug.Log("Play a sound");
     }
 
 }
